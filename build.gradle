@@ -13,13 +13,14 @@ buildscript {
     dependencies {
 
         classpath(
-                ["org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"],
-                ["org.codehaus.groovy:groovy-all:$groovyVersion"]
+                ["io.spring.gradle:dependency-management-plugin:0.5.4.RELEASE"],
+                ["org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"]
         )
     }
 
 }
 
+apply plugin: "io.spring.dependency-management"
 apply plugin: "java"
 apply plugin: "groovy"
 apply plugin: "spring-boot"
@@ -32,47 +33,58 @@ repositories {
     jcenter()
 }
 
+dependencyManagement {
+    imports {
+        mavenBom 'io.spring.platform:platform-bom:2.0.3.RELEASE'
+    }
+}
+
 dependencies {
 
     compile(
 
-            ["org.projectlombok:lombok:$lombokVersion"],
-            //["org.springframework.boot:spring-boot-starter-log4j2:$springBootVersion"],
+            // Spring Starter
+            ["org.springframework.boot:spring-boot-starter-undertow"],
+            ["org.springframework.boot:spring-boot-starter-log4j2"],
+            ["org.springframework.boot:spring-boot-starter-data-jpa"],
 
             // Spring Boot
-            ["org.springframework.boot:spring-boot-starter-undertow:$springBootVersion"],
-            ["org.springframework.boot:spring-boot-starter-data-jpa:$springBootVersion"],
-
-            ["org.springframework:spring-context-support:$springVersion"],
-            ["org.springframework.integration:spring-integration-core:$springVersion"],
-            ["org.springframework.integration:spring-integration-ftp:$springVersion"],
-            ["org.springframework.integration:spring-integration-sftp:$springVersion"],
-            ["org.springframework.integration:spring-integration-java-dsl:1.1.2.RELEASE"],
-            ["org.springframework:spring-aop:$springVersion"],
-            ["org.springframework:spring-jdbc:$springVersion"],
-
-            'org.apache.sshd:sshd-core:1.1.0',
-
-            ["org.springframework:spring-tx:$springVersion"],
             ["org.springframework.boot:spring-boot-devtools"],
+
+            // Spring Integration
+            ["org.springframework.integration:spring-integration-java-dsl"],
+            ["org.springframework.integration:spring-integration-ftp"],
+            ["org.springframework.integration:spring-integration-sftp"],
+            ["org.springframework.integration:spring-integration-core"],
+
+            // Spring Data
+//            ["org.springframework.data:spring-data-jpa"],
+
+            // Spring Batch
+            ["org.springframework.batch:spring-batch-core"],
+            ["org.springframework.batch:spring-batch-admin-manager"],
+
+            // Spring
+            ["org.springframework:spring-context-support"],
+            ["org.springframework:spring-tx"],
+            ["org.springframework:spring-aop"],
+
+
+            // Quartz and Scheduling
+            ["org.quartz-scheduler:quartz:$quartzVersion"],
             ["com.google.guava:guava:$guavaVersion"],
             ["joda-time:joda-time:2.9.2"],
-            ["org.quartz-scheduler:quartz:$quartzVersion"],
+
             ["org.codehaus.groovy:groovy-all:$groovyVersion"],
-            ["org.springframework.boot:spring-boot-starter-undertow:$springBootVersion"],
-            ["org.projectlombok:lombok:1.16.8"],
-            ["org.springframework.boot:spring-boot-starter-data-jdbc:$springBootVersion"],
-            ["org.springframework.boot:spring-boot-starter-data-jpa:1.3.3.RELEASE"],
+
             ["commons-collections:commons-collections:3.2.2"],
-            ["org.springframework.boot:spring-boot-starter-batch:$springBootVersion"],
-            ["org.springframework.integration:spring-integration-ftp:$springVersion"],
-            ["org.springframework.integration:spring-integration-sftp:$springVersion"],
-            ["org.springframework.integration:spring-integration-java-dsl:1.1.2.RELEASE"],
 
             // Mail
             ["javax.mail:mail:1.4.7"],
-            'org.apache.sshd:apache-sshd:1.1.0'
+            ["org.apache.sshd:apache-sshd:1.1.0"],
+            ["org.apache.sshd:sshd-core:1.1.0"],
 
+            ["org.projectlombok:lombok:$lombokVersion"],
 
             // Database
             //["mysql:mysql-connector-java:$mysqlVersion"]
@@ -81,7 +93,7 @@ dependencies {
 
     testCompile(
             ["junit:junit:$junitVersion"],
-            /"org.hamcrest:hamcrest-all:1.3"],
+            ["org.hamcrest:hamcrest-all:1.3"],
             ["org.mockito:mockito-core:1.9.5"],
             ["org.spockframework:spock-core:1.0-groovy-2.4"],
             ["org.jboss.arquillian:arquillian-junit:$arquillianVersion"],
@@ -89,13 +101,8 @@ dependencies {
             ["org.yaml:snakeyaml:1.17"],
             ["commons-lang:commons-lang:2.6"],
             ["org.testng:testng:6.9.10"],
-            ["org.springframework.boot:spring-boot-starter-test:$springBootVersion"],
+            ["org.springframework.boot:spring-boot-starter-test"],
             ['org.testng:testng:6.9.10'],
-            ["org.spockframework:spock-core:1.0-groovy-2.4"],
-            ["org.hamcrest:hamcrest-all:1.3"],
-            ["org.mockito:mockito-core:1.9.5"],
-            ["org.jboss.arquillian:arquillian-junit:$arquillianVersion"],
-            ["org.jvnet.mock-javamail:mock-javamail:1.9"]*/
     )
 
 }

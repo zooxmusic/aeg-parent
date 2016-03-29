@@ -1,4 +1,4 @@
-package com.aeg;
+package com.aeg.ims;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -8,9 +8,9 @@ import org.springframework.integration.config.EnableIntegration;
 @SpringBootApplication
 @EnableIntegration
 @IntegrationComponentScan
-public class AAggregator {
+public class IMSApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(AAggregator.class, args);
+        SpringApplication.run(IMSApplication.class, args);
     }
 }

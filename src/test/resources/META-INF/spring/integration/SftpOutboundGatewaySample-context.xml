@@ -1,15 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xmlns:int="http://www.springframework.org/schema/integration"
-	xmlns:int-sftp="http://www.springframework.org/schema/integration/sftp"
-	xsi:schemaLocation="http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:int="http://www.springframework.org/schema/integration"
+	   xmlns:int-sftp="http://www.springframework.org/schema/integration/sftp"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xsi:schemaLocation="http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
-		http://www.springframework.org/schema/integration/sftp http://www.springframework.org/schema/integration/sftp/spring-integration-sftp.xsd">
+		http://www.springframework.org/schema/integration/sftp http://www.springframework.org/schema/integration/sftp/spring-integration-sftp.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<import resource="SftpSampleCommon.xml"/>
+	<context:property-placeholder location="classpath:cr.properties"/>
 
-	<int:gateway id="gw" service-interface="org.springframework.integration.samples.sftp.ToSftpFlowGateway"
+	<int:gateway id="gw" service-interface="com.aeg.ims.ftp.ToSftpFlowGateway"
 		default-request-channel="inbound"/>
 
 	<bean id="sftpSessionFactory" class="org.springframework.integration.file.remote.session.CachingSessionFactory">
@@ -20,7 +21,7 @@
 		class="org.springframework.integration.sftp.session.DefaultSftpSessionFactory">
 		<property name="host" value="${host}"/>
 		<property name="password" value="${passphrase}"/>
-		<property name="port" value="#{serverPort}"/>
+		<property name="port" value="${port}"/>
 		<property name="user" value="${username}"/>
 		<property name="allowUnknownKeys" value="true"/>
 	</bean>
@@ -56,7 +57,7 @@
 		session-factory="sftpSessionFactory"
 		expression="headers['file_remoteDirectory'] + headers['file_remoteFile']"
 		request-channel="toRm"
-		command="rm">
+		command="ls">
 		<int-sftp:request-handler-advice-chain>
 			<int:retry-advice />
 		</int-sftp:request-handler-advice-chain>

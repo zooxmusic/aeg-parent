@@ -42,8 +42,10 @@ import com.jcraft.jsch.ChannelSftp.LsEntry;
 public class SftpInboundReceiveSample {
 
 	public void runDemo(){
-		ConfigurableApplicationContext context =
-				new ClassPathXmlApplicationContext("/META-INF/spring/integration/SftpInboundReceiveSamFileTemplate<LsEntry> template = null;
+		ConfigurableApplicationContext context = new ClassPathXmlApplicationContext(
+				"classpath:/META-INF/spring/integration/SftpInboundReceiveSample-context.xml");
+
+		RemoteFileTemplate<LsEntry> template = null;
 		String file1 = "a.txt";
 		String file2 = "b.txt";
 		String file3 = "c.bar";

@@ -47,7 +47,7 @@ public class SftpTestUtils {
 				@Override
 				public Void doInSession(Session<LsEntry> session) throws IOException {
 					try {
-						session.mkdir("Test");
+						session.mkdir("BriansTest");
 					}
 					catch (Exception e) {
 						assertThat(e.getMessage(), containsString("failed to create"));
@@ -101,7 +101,7 @@ public class SftpTestUtils {
 							.getPropertyValue("targetSession")).getPropertyValue("channel");
 					for (int i = 0; i < fileNames.length; i++) {
 						try {
-							SftpATTRS stat = channel.stat("si.sftp.sample/" + fileNames[i]);
+							SftpATTRS stat = channel.stat("Test/" + fileNames[i]);
 							if (stat == null) {
 								System.out.println("stat returned null for " + fileNames[i]);
 								return false;

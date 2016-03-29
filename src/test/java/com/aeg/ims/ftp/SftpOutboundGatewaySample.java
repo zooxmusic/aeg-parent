@@ -42,8 +42,7 @@ public class SftpOutboundGatewaySample {
 
 	@Test
 	public void testLsGetRm() throws Exception {
-		ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext(
-				"classpath:/META-INF/spring/integration/SftpOutboundGatewaySample-context.xml");
+		ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:/META-INF/spring/integration/SftpOutboundGatewaySample-context.xml");
 		ToSftpFlowGateway toFtpFlow = ctx.getBean(ToSftpFlowGateway.class);
 		RemoteFileTemplate<LsEntry> template = null;
 		String file1 = "1.ftptest";
