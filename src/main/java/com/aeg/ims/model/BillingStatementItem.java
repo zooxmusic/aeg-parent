@@ -3,7 +3,6 @@ package com.aeg.ims.model;
 
 import lombok.Data;
 import lombok.EqualsAndHashCode;
-import sun.plugin.javascript.navig4.Layer;
 
 import javax.persistence.*;
 import java.util.Date;

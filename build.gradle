@@ -8,22 +8,28 @@ buildscript {
 
     repositories {
         mavenCentral()
+        jcenter()
+        maven { url 'http://jcenter.bintray.com' }
     }
 
     dependencies {
 
         classpath(
                 ["io.spring.gradle:dependency-management-plugin:0.5.4.RELEASE"],
-                ["org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"]
+                ["org.springframework.boot:spring-boot-gradle-plugin:$springBootVersion"],
+                ["com.bmuschko:gradle-cargo-plugin:2.2.2"]
         )
     }
 
 }
 
+apply plugin: 'build-dashboard'
+apply plugin: 'com.bmuschko.cargo'
 apply plugin: "io.spring.dependency-management"
 apply plugin: "java"
 apply plugin: "groovy"
 apply plugin: "spring-boot"
+apply plugin: "war"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -38,6 +44,21 @@ dependencyManagement {
         mavenBom 'io.spring.platform:platform-bom:2.0.3.RELEASE'
     }
 }
+springBoot {
+    mainClass = "com.aeg.Application"
+}
+
+task show << {
+    println buildDir
+}
+configurations {
+    //compile.exclude module: 'org.springframework.boot'
+    all*.exclude group: 'spring-boot-starter-tomcat'
+    all*.exclude group: 'spring-boot-starter-logging'
+    all*.exclude group: "logback-classic"
+    all*.exclude group: "commons-logging"
+    all*.exclude group: "jboss-logging"
+}
 
 dependencies {
 
@@ -45,11 +66,13 @@ dependencies {
 
             // Spring Starter
             ["org.springframework.boot:spring-boot-starter-undertow"],
+            ["org.springframework.boot:spring-boot-starter-freemarker"],
             ["org.springframework.boot:spring-boot-starter-log4j2"],
             ["org.springframework.boot:spring-boot-starter-data-jpa"],
+            ["org.springframework.boot:spring-boot-starter-mail"],
 
             // Spring Boot
-            ["org.springframework.boot:spring-boot-devtools"],
+            //["org.springframework.boot:spring-boot-devtools"],
 
             // Spring Integration
             ["org.springframework.integration:spring-integration-java-dsl"],
@@ -62,13 +85,13 @@ dependencies {
 
             // Spring Batch
             ["org.springframework.batch:spring-batch-core"],
-            ["org.springframework.batch:spring-batch-admin-manager"],
+            ["org.springframework.batch:spring-batch-admin-manager:1.3.1.RELEASE"],
+            ["org.springframework.batch:spring-batch-admin-resources:1.3.1.RELEASE"],
 
             // Spring
             ["org.springframework:spring-context-support"],
             ["org.springframework:spring-tx"],
             ["org.springframework:spring-aop"],
-
 
             // Quartz and Scheduling
             ["org.quartz-scheduler:quartz:$quartzVersion"],
@@ -78,6 +101,7 @@ dependencies {
             ["org.codehaus.groovy:groovy-all:$groovyVersion"],
 
             ["commons-collections:commons-collections:3.2.2"],
+            ["org.freemarker:freemarker:2.3.24-incubating"],
 
             // Mail
             ["javax.mail:mail:1.4.7"],
@@ -87,7 +111,12 @@ dependencies {
             ["org.projectlombok:lombok:$lombokVersion"],
 
             // Database
-            //["mysql:mysql-connector-java:$mysqlVersion"]
+            ["mysql:mysql-connector-java:$mysqlVersion"],
+
+            ["org.codehaus.cargo:cargo-core-uberjar:1.4.19"],
+
+            ["org.slf4j:slf4j-api:1.7.+"],
+            ["ch.qos.logback:logback-classic:1.+"]
 
     )
 
@@ -105,6 +134,32 @@ dependencies {
             ['org.testng:testng:6.9.10'],
     )
 
+}
+
+
+cargo {
+    containerId = 'tomcat6x'
+    port = 9090
+
+    deployable {
+        context = 'imsApp'
+    }
+
+    remote {
+        hostname = 'cloud.internal.it'
+        username = 'superuser'
+        password = 'secretpwd'
+    }
+
+    local {
+        homeDir = file('/home/bszucs/dev/tools/apache-tomcat-6.0.32')
+        outputFile = file('build/output.log')
+        timeout = 60000
+
+        containerProperties {
+            property 'cargo.tomcat.ajp.port', 9099
+        }
+    }
 }
 
 

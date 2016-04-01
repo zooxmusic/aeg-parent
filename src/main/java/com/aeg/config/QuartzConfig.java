@@ -12,6 +12,7 @@ import java.util.Map;
 @Configuration
 @ComponentScan("com.aeg")
 public class QuartzConfig {
+    /*
     @Bean
     public MethodInvokingJobDetailFactoryBean methodInvokingJobDetailFactoryBean() {
         MethodInvokingJobDetailFactoryBean obj = new MethodInvokingJobDetailFactoryBean();
@@ -57,5 +58,5 @@ public class QuartzConfig {
         SchedulerFactoryBean scheduler = new SchedulerFactoryBean();
         scheduler.setTriggers(simpleTriggerFactoryBean().getObject(),cronTriggerFactoryBean().getObject());
         return scheduler;
-    }
+    }*/
 }

@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/integration/sftp http://www.springframework.org/schema/integration/sftp/spring-integration-sftp.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:property-placeholder location="classpath:cr.properties"/>
+	<context:property-placeholder location="classpath:aeg.properties"/>
 
 	<int:gateway id="gw" service-interface="com.aeg.ims.ftp.ToSftpFlowGateway"
 		default-request-channel="inbound"/>

@@ -1,0 +1,46 @@
+spring:
+  jpa:
+    # properties:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/ims
+    username: root
+    password: Z00xMu$1c
+  # max-wait: 10000
+  #  max-active: 50
+   # test-on-borrow: true
+  #  testOnBorrow: true
+  #  validationQuery: select 1 from DUAL
+  #  validationInterval: 30000
+  #  maxActive: 100
+  ##  maxIdle: 100
+ #   minIdle: 10
+ #   initialSize: 0
+ #   maxWait: 30000
+ #   testOnReturn: false
+ #   testWhileIdle: false
+ #   timeBetweenEvictionRunsMillis: 5000
+ #   minEvictableIdleTimeMillis: 60000
+ #   removeAbandoned: true
+ #   removeAbandonedTimeout: 60
+ #   logAbandoned: true
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: brian@zooxmusic.com
+    password: Z00xMu$1c
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls.enable: true
+          starttls.required: true
+
+  freemarker:
+    allow-session-override: false # Set whether HttpSession attributes are allowed to override (hide) controller generated model attributes of the same name.
+    cache: false # Enable template caching.
+    charset: UTF-8 # Template encoding.
+    check-template-location: true # Check that the templates location exists.

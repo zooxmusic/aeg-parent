@@ -8,7 +8,7 @@
 		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
 		http://www.springframework.org/schema/integration/sftp http://www.springframework.org/schema/integration/sftp/spring-integration-sftp.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
-	<context:property-placeholder location="classpath:icf.properties"/>
+	<context:property-placeholder location="classpath:aeg.properties"/>
 
 	<bean id="defaultSftpSessionFactory" class="org.springframework.integration.sftp.session.DefaultSftpSessionFactory">
 		<property name="host" value="${host}"/>
