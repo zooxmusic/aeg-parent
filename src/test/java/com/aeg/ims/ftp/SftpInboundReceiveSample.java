@@ -70,8 +70,7 @@ public class SftpInboundReceiveSample {
 			received = localFileChannel.receive(1000);
 			assertNull("Expected null", received);
 			System.out.println("No third file was received as expected");
-		}
-		finally {
+		} finally {
 			SftpTestUtils.cleanUp(template, file1, file2, file3);
 			context.close();
 			assertTrue("Could note delete retrieved file", new File("local-dir", file1).delete());

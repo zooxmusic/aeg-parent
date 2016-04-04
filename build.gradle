@@ -48,9 +48,6 @@ springBoot {
     mainClass = "com.aeg.Application"
 }
 
-task show << {
-    println buildDir
-}
 configurations {
     //compile.exclude module: 'org.springframework.boot'
     all*.exclude group: 'spring-boot-starter-tomcat'

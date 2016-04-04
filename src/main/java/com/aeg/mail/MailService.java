@@ -15,7 +15,8 @@ public class MailService {
 
     @Autowired
     private SimpleMailMessage alertMailMessage;
-
+    public void sendMail(EmailMessage message) {
+    }
     public void sendMail(String from, String to, String subject, String body) {
 
         SimpleMailMessage message = new SimpleMailMessage();

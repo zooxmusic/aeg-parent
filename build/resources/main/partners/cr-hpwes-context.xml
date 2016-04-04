@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:int="http://www.springframework.org/schema/integration"
+	   xmlns:context="http://www.springframework.org/schema/context"
+	   xmlns:int-sftp="http://www.springframework.org/schema/integration/sftp"
+	   xmlns:file="http://www.springframework.org/schema/integration/file"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/integration http://www.springframework.org/schema/integration/spring-integration.xsd
+		http://www.springframework.org/schema/integration/sftp http://www.springframework.org/schema/integration/sftp/spring-integration-sftp.xsd
+		 http://www.springframework.org/schema/context
+	   http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/integration/file http://www.springframework.org/schema/integration/file/spring-integration-file.xsd">
+
+	<context:property-placeholder location="classpath:partners/cr.properties"/>
+
+	<bean id="sftpSessionFactory" class="org.springframework.integration.sftp.session.DefaultSftpSessionFactory">
+		<property name="host" value="${host}"/>
+		<property name="port" value="${port}"/>
+		<property name="user" value="${username}"/>
+		<property name="password" value="${password}"/>
+		<property name="allowUnknownKeys" value="true"/>
+	</bean>
+
+
+
+	<bean id="remoteDir" class="java.util.concurrent.atomic.AtomicReference"/>
+<!--
+	<bean id="localDir" class="java.util.concurrent.atomic.AtomicReference"/>
+
+	<int:channel id="fileIn"/>
+
+	<file:inbound-channel-adapter
+			id="inputFileChannelAdapter"
+			channel="fileIn"
+			directory="@remoteDir.get()"
+			auto-startup="false"
+			prevent-duplicates="true">
+		<int:poller id="inputFilePoller" time-unit="SECONDS" fixed-delay="1" max-messages-per-poll="100" />
+	</file:inbound-channel-adapter>
+
+	-->
+	<int-sftp:inbound-channel-adapter id="sftpInboundAdapter"
+									  auto-startup="false"
+									  channel="receiveChannel"
+									  remote-directory="${hpwesRemote}"
+									  session-factory="sftpSessionFactory"
+									  local-directory="C:\IMSTransferFiles\Inbound\CR\HPWES"
+									  auto-create-local-directory="true"
+									  local-filename-generator-expression=""
+									  delete-remote-files="false">
+		<int:poller fixed-rate="1000" max-messages-per-poll="1"/>
+	</int-sftp:inbound-channel-adapter>
+
+	<int:channel id="receiveChannel">
+		<int:queue/>
+	</int:channel>
+</beans>

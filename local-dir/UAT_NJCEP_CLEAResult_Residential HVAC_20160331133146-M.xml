@@ -1,0 +1,350 @@
+<ims_application_data_update>
+	<source>CR</source>
+	<transaction-id>20160331133143219829</transaction-id>
+	<generated>20160331T17314321Z</generated>
+	<application-group>
+		<application>
+			<application-id>RBT-694758_CR</application-id>
+			<application-num>RBT-694758</application-num>
+			<ims-program-name>Residential HVAC - Electric and Gas</ims-program-name>
+			<entity-group>
+				<entity>
+					<entity-id>C000447694_CR</entity-id>
+					<entity-type>Applicant</entity-type>
+					<first-name>Karen</first-name>
+					<last-name>Fortin</last-name>
+					<phone-main>(671) 569-8532</phone-main>
+					<email>kf@fortintest.net</email>
+					<address1>71 Lovett Ave</address1>
+					<city>Little Silver</city>
+					<state>NJ</state>
+					<zip5>07739</zip5>
+					<active>Y</active>
+				</entity>
+				<entity>
+					<entity-id>A000168670_CR</entity-id>
+					<entity-type>Contractor</entity-type>
+					<company-name>Rocky's Plumbing and HVAC</company-name>
+					<phone-main>(999) 766-0808</phone-main>
+					<email>rocky@rockyrocksyourhvac.com</email>
+					<address1>290 Sycamore St</address1>
+					<city>Westfield</city>
+					<state>NJ</state>
+					<zip5>07090</zip5>
+					<active>Y</active>
+				</entity>
+				<entity>
+					<entity-id>A000169988_CR</entity-id>
+					<entity-type>Third Party</entity-type>
+					<first-name>Tom</first-name>
+					<last-name>Laroche</last-name>
+					<phone-main>(555) 896-3214</phone-main>
+					<address1>71 Lovett Ave</address1>
+					<city>Little Silver</city>
+					<state>NJ</state>
+					<zip5>07739</zip5>
+					<active>Y</active>
+				</entity>
+			</entity-group>
+			<premise-group>
+				<premise>
+					<premise-id>PRJ-694398_CR</premise-id>
+					<building>
+						<building-id>c7914f13-01f5-e511-80e3-00505686042f_CR</building-id>
+						<address1>340 Sherwood Dr</address1>
+						<city>Keyport</city>
+						<state>NJ</state>
+						<zip5>07735</zip5>
+						<utility-account-group>
+							<utility-account>
+								<ua-id>3212eaba-00f5-e511-80e3-00505686042f_CR</ua-id>
+								<account-number>0005551234</account-number>
+								<ims-utility-company-name>Rockland Electric Company</ims-utility-company-name>
+								<premise-owner-entity-id>C000447694_CR</premise-owner-entity-id>
+								<ims-service-type>E</ims-service-type>
+								<active>Y</active>
+							</utility-account>
+						</utility-account-group>
+					</building>
+					<ims-building-space-type>Residential - Single-Family</ims-building-space-type>
+				</premise>
+			</premise-group>
+			<milestone-group>
+				<milestone>
+					<milestone-id>RBT-694758_001_CR</milestone-id>
+					<ims-milestone-type-name>Received</ims-milestone-type-name>
+					<milestone-date-time>2016-03-28 00:00:00</milestone-date-time>
+				</milestone>
+			</milestone-group>
+			<measure-group>
+				<installed-group>
+					<measure-installed>
+						<line-item-id>MC-941922_CR</line-item-id>
+						<ims-measure-detailed-type-name>Propane Furnace</ims-measure-detailed-type-name>
+						<measure-location-premise-id>PRJ-694398_CR</measure-location-premise-id>
+						<qty-committed>0</qty-committed>
+						<qty-installed>1</qty-installed>
+						<measure-installed-attribute-group>
+							<measure-installed-attribute>
+								<field>PURCHASE_DATE</field>
+								<value>2016-03-02 00:00:00</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>SERIAL_NUMBER</field>
+								<value>SN33445566</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>AFUE</field>
+								<value>0.9600000000</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>BTUH</field>
+								<value>45300</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>MANUFACTURER</field>
+								<value>Smith</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>MODEL</field>
+								<value>model123</value>
+							</measure-installed-attribute>
+						</measure-installed-attribute-group>
+						<incentive-amount>250.00</incentive-amount>
+						<energy-savgen-meas-inst-deemed>
+							<sav-elec-ann-kwh>0.0000000000</sav-elec-ann-kwh>
+							<sav-peak-demand-kw>0.0000000000</sav-peak-demand-kw>
+							<sav-gas-ann-therm>0.0000000000</sav-gas-ann-therm>
+						</energy-savgen-meas-inst-deemed>
+					</measure-installed>
+					<measure-installed>
+						<line-item-id>MC-941924_CR</line-item-id>
+						<ims-measure-detailed-type-name>Indirect Water Heater</ims-measure-detailed-type-name>
+						<measure-location-premise-id>PRJ-694398_CR</measure-location-premise-id>
+						<qty-committed>0</qty-committed>
+						<qty-installed>1</qty-installed>
+						<measure-installed-attribute-group>
+							<measure-installed-attribute>
+								<field>PURCHASE_DATE</field>
+								<value>2016-03-18 00:00:00</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>SERIAL_NUMBER</field>
+								<value>SN6521</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>BTUH</field>
+								<value>48000</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>MANUFACTURER</field>
+								<value>Jones</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>MODEL</field>
+								<value>Model-x121</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Water Heater Type</field>
+								<value>Indirect</value>
+							</measure-installed-attribute>
+						</measure-installed-attribute-group>
+						<incentive-amount>0.00</incentive-amount>
+						<energy-savgen-meas-inst-deemed>
+							<sav-elec-ann-kwh>0.0000000000</sav-elec-ann-kwh>
+							<sav-peak-demand-kw>0.0000000000</sav-peak-demand-kw>
+							<sav-gas-ann-therm>0.0000000000</sav-gas-ann-therm>
+						</energy-savgen-meas-inst-deemed>
+					</measure-installed>
+				</installed-group>
+			</measure-group>
+			<incentive-group>
+				<incentive>
+					<incentive-id>MC-941922_CR</incentive-id>
+					<ims-incentive-type-name>Appliance Rebate</ims-incentive-type-name>
+					<ims-funding-source_name>HVAC - SEP (Non-IOU)</ims-funding-source_name>
+				</incentive>
+				<incentive>
+					<incentive-id>MC-941924_CR</incentive-id>
+					<ims-incentive-type-name>Appliance Rebate</ims-incentive-type-name>
+					<ims-funding-source_name>HVAC - SEP (Non-IOU)</ims-funding-source_name>
+				</incentive>
+				<incentive>
+					<incentive-id>MC-941925_CR</incentive-id>
+					<ims-incentive-type-name>Combination Incentive</ims-incentive-type-name>
+					<ims-funding-source_name>HVAC - SEP (Non-IOU)</ims-funding-source_name>
+				</incentive>
+			</incentive-group>
+		</application>
+		<application>
+			<application-id>RBT-694757_CR</application-id>
+			<application-num>RBT-694757</application-num>
+			<ims-program-name>Residential HVAC - Electric and Gas</ims-program-name>
+			<entity-group>
+				<entity>
+					<entity-id>C000447692_CR</entity-id>
+					<entity-type>Applicant</entity-type>
+					<first-name>Bruce</first-name>
+					<last-name>Palmer</last-name>
+					<phone-main>(617) 444-5321</phone-main>
+					<email>bruce.palmer@crtestuat.com</email>
+					<address1>93 Bowling Lane</address1>
+					<city>Deer Park</city>
+					<state>NY</state>
+					<zip5>11729</zip5>
+					<active>Y</active>
+				</entity>
+				<entity>
+					<entity-id>A000029321_CR</entity-id>
+					<entity-type>Contractor</entity-type>
+					<company-name>EIGHTCAP, INC.</company-name>
+					<phone-main>616.754.9315</phone-main>
+					<fax>616.754.9310</fax>
+					<address1>904 OAK DRIVE - TURK LAKE</address1>
+					<city>GREENVILLE</city>
+					<state>MI</state>
+					<zip5>48838</zip5>
+					<active>Y</active>
+				</entity>
+			</entity-group>
+			<premise-group>
+				<premise>
+					<premise-id>PRJ-694397_CR</premise-id>
+					<building>
+						<building-id>2ff2fcfc-fff4-e511-80e3-00505686042f_CR</building-id>
+						<address1>245 Maryland S</address1>
+						<city>Westfield</city>
+						<state>NJ</state>
+						<zip5>07090</zip5>
+						<utility-account-group>
+							<utility-account>
+								<ua-id>1c04869b-fff4-e511-80e3-00505686042f_CR</ua-id>
+								<account-number>1008889563</account-number>
+								<ims-utility-company-name>ACE</ims-utility-company-name>
+								<premise-owner-entity-id>C000447692_CR</premise-owner-entity-id>
+								<ims-service-type>E</ims-service-type>
+								<active>Y</active>
+							</utility-account>
+							<utility-account>
+								<ua-id>1e04869b-fff4-e511-80e3-00505686042f_CR</ua-id>
+								<account-number>0005896532</account-number>
+								<ims-utility-company-name>PSE&amp;G</ims-utility-company-name>
+								<premise-owner-entity-id>C000447692_CR</premise-owner-entity-id>
+								<ims-service-type>G</ims-service-type>
+								<active>Y</active>
+							</utility-account>
+						</utility-account-group>
+					</building>
+					<ims-building-space-type>Residential - Single-Family</ims-building-space-type>
+				</premise>
+			</premise-group>
+			<milestone-group>
+				<milestone>
+					<milestone-id>RBT-694757_001_CR</milestone-id>
+					<ims-milestone-type-name>Received</ims-milestone-type-name>
+					<milestone-date-time>2016-03-28 00:00:00</milestone-date-time>
+				</milestone>
+				<milestone>
+					<milestone-id>RBT-694757_002_CR</milestone-id>
+					<ims-milestone-type-name>Approved</ims-milestone-type-name>
+					<milestone-date-time>2016-03-28 00:00:02</milestone-date-time>
+				</milestone>
+			</milestone-group>
+			<measure-group>
+				<installed-group>
+					<measure-installed>
+						<line-item-id>MC-941919_CR</line-item-id>
+						<ims-measure-detailed-type-name>A/C - Central</ims-measure-detailed-type-name>
+						<measure-location-premise-id>PRJ-694397_CR</measure-location-premise-id>
+						<qty-committed>0</qty-committed>
+						<qty-installed>1</qty-installed>
+						<measure-installed-attribute-group>
+							<measure-installed-attribute>
+								<field>PURCHASE_DATE</field>
+								<value>2016-03-15 00:00:00</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>BTUH</field>
+								<value>39500</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>EER</field>
+								<value>14.5000000000</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>SEER</field>
+								<value>16.5000000000</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Condensing Unit MANUFACTURER</field>
+								<value>CuMfg</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Condensing Unit MODEL</field>
+								<value>CuMn</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Condensing Unit SERIAL_NUMBER</field>
+								<value>CuSerno111</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Indoor Coil MANUFACTURER</field>
+								<value>IcMfg</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Indoor Coil MODEL</field>
+								<value>IcMn</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Indoor Coil SERIAL_NUMBER</field>
+								<value>IcSerno876</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Furnace MANUFACTURER</field>
+								<value>FurnMfg</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Furnace MODEL</field>
+								<value>FurnMn</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Furnace SERIAL_NUMBER</field>
+								<value>FurnSn987</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Air Handler MANUFACTURER</field>
+								<value>AhMfg</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Air Handler MODEL</field>
+								<value>AhMn</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Air Handler SERIAL_NUMBER</field>
+								<value>AhSerNo123</value>
+							</measure-installed-attribute>
+						</measure-installed-attribute-group>
+						<incentive-amount>300.00</incentive-amount>
+						<energy-savgen-meas-inst-deemed>
+							<sav-elec-ann-kwh>386.7132867133</sav-elec-ann-kwh>
+							<sav-peak-demand-kw>0.5400061031</sav-peak-demand-kw>
+							<sav-gas-ann-therm>0.0000000000</sav-gas-ann-therm>
+						</energy-savgen-meas-inst-deemed>
+					</measure-installed>
+				</installed-group>
+			</measure-group>
+			<incentive-group>
+				<incentive>
+					<incentive-id>MC-941919_CR</incentive-id>
+					<ims-incentive-type-name>Appliance Rebate</ims-incentive-type-name>
+					<ims-funding-source_name>Residential HVAC - Electric &amp; Gas</ims-funding-source_name>
+				</incentive>
+				<incentive>
+					<incentive-id>MC-941920_CR</incentive-id>
+					<ims-incentive-type-name>Sandy Incentive</ims-incentive-type-name>
+					<ims-funding-source_name>Residential HVAC - Electric &amp; Gas</ims-funding-source_name>
+				</incentive>
+			</incentive-group>
+		</application>
+	</application-group>
+</ims_application_data_update>

@@ -1,0 +1,293 @@
+<ims_application_data_update>
+	<source>CR</source>
+	<transaction-id>20160303140646128648</transaction-id>
+	<generated>20160303T14064612Z</generated>
+	<application-group>
+		<application>
+			<application-id>RBT-671033_CR</application-id>
+			<application-num>RBT-671033</application-num>
+			<ims-program-name>Residential HVAC - Electric and Gas</ims-program-name>
+			<entity-group>
+				<entity>
+					<entity-id>C000442732_CR</entity-id>
+					<entity-type>Applicant</entity-type>
+					<first-name>Elizabeth</first-name>
+					<last-name>Taylor</last-name>
+					<phone-main>(555) 322-3212</phone-main>
+					<email>liz.taylor@test.com</email>
+					<address1>105 Main St</address1>
+					<city>Forked River</city>
+					<state>NJ</state>
+					<zip5>08731</zip5>
+					<active>Y</active>
+				</entity>
+				<entity>
+					<entity-id>A000168450_CR</entity-id>
+					<entity-type>Contractor</entity-type>
+					<company-name>NJ HVAC Contractor</company-name>
+					<phone-main>555-348-5465</phone-main>
+					<address1>25 West Ave</address1>
+					<city>Avenel</city>
+					<state>NJ</state>
+					<zip5>07001</zip5>
+					<active>Y</active>
+				</entity>
+				<entity>
+					<entity-id>A000168807_CR</entity-id>
+					<entity-type>Third Party</entity-type>
+					<first-name>Scott</first-name>
+					<last-name>Hamilton</last-name>
+					<phone-main>(555) 654-3223</phone-main>
+					<address1>102 West Ave</address1>
+					<city>Newark</city>
+					<state>NJ</state>
+					<zip5>07105</zip5>
+					<active>Y</active>
+				</entity>
+			</entity-group>
+			<premise-group>
+				<premise>
+					<premise-id>PRJ-671393_CR</premise-id>
+					<building>
+						<building-id>ea2bffb3-a5e0-e511-80e2-00505686042f_CR</building-id>
+						<address1>105 Main St</address1>
+						<city>Forked River</city>
+						<state>NJ</state>
+						<zip5>08731</zip5>
+						<utility-account-group>
+							<utility-account>
+								<ua-id>1a00ac0f-a5e0-e511-80e2-00505686042f_CR</ua-id>
+								<account-number>432345221</account-number>
+								<ims-utility-company-name>JCP&amp;L</ims-utility-company-name>
+								<premise-owner-entity-id>C000442732_CR</premise-owner-entity-id>
+								<ims-service-type>E</ims-service-type>
+								<active>Y</active>
+							</utility-account>
+						</utility-account-group>
+					</building>
+					<ims-building-space-type>Residential - Single-Family</ims-building-space-type>
+				</premise>
+			</premise-group>
+			<milestone-group>
+				<milestone>
+					<milestone-id>RBT-671033_001_CR</milestone-id>
+					<ims-milestone-type-name>Received</ims-milestone-type-name>
+					<milestone-date-time>2015-03-02 16:44:00</milestone-date-time>
+				</milestone>
+			</milestone-group>
+			<measure-group>
+				<installed-group>
+					<measure-installed>
+						<line-item-id>MC-928712_CR</line-item-id>
+						<ims-measure-detailed-type-name>Oil Furnace</ims-measure-detailed-type-name>
+						<measure-location-premise-id>PRJ-671393_CR</measure-location-premise-id>
+						<qty-committed>0</qty-committed>
+						<qty-installed>1</qty-installed>
+						<measure-installed-attribute-group>
+							<measure-installed-attribute>
+								<field>PURCHASE DATE</field>
+								<value>2/17/2016</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>SERIAL_NUMBER</field>
+								<value>Fur Serial 1</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>AFUE</field>
+								<value>0.850</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>BTUH</field>
+								<value>48000</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>ENERGY STAR</field>
+								<value>No</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>MANUFACTURER</field>
+								<value>Fur Man</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>MODEL</field>
+								<value>Fur Mod 1</value>
+							</measure-installed-attribute>
+						</measure-installed-attribute-group>
+						<incentive-amount>250.00</incentive-amount>
+						<energy-savgen-meas-inst-deemed>
+							<sav-elec-ann-kwh>0</sav-elec-ann-kwh>
+							<sav-peak-demand-kw>0</sav-peak-demand-kw>
+							<sav-gas-ann-therm>0</sav-gas-ann-therm>
+						</energy-savgen-meas-inst-deemed>
+					</measure-installed>
+				</installed-group>
+			</measure-group>
+			<incentive-group>
+				<incentive>
+					<incentive-id>MC-928712_CR</incentive-id>
+					<ims-incentive-type-name>Appliance Rebate</ims-incentive-type-name>
+					<ims-funding-source_name>HVAC - SEP (Non-IOU)</ims-funding-source_name>
+				</incentive>
+			</incentive-group>
+		</application>
+		<application>
+			<application-id>RBT-671032_CR</application-id>
+			<application-num>RBT-671032</application-num>
+			<ims-program-name>Residential HVAC - Electric and Gas</ims-program-name>
+			<entity-group>
+				<entity>
+					<entity-id>C000442732_CR</entity-id>
+					<entity-type>Applicant</entity-type>
+					<first-name>Elizabeth</first-name>
+					<last-name>Taylor</last-name>
+					<phone-main>(555) 322-3212</phone-main>
+					<email>liz.taylor@test.com</email>
+					<address1>105 Main St</address1>
+					<city>Forked River</city>
+					<state>NJ</state>
+					<zip5>08731</zip5>
+					<active>Y</active>
+				</entity>
+				<entity>
+					<entity-id>A000168450_CR</entity-id>
+					<entity-type>Contractor</entity-type>
+					<company-name>NJ HVAC Contractor</company-name>
+					<phone-main>555-348-5465</phone-main>
+					<address1>25 West Ave</address1>
+					<city>Avenel</city>
+					<state>NJ</state>
+					<zip5>07001</zip5>
+					<active>Y</active>
+				</entity>
+				<entity>
+					<entity-id>A000168807_CR</entity-id>
+					<entity-type>Third Party</entity-type>
+					<first-name>Scott</first-name>
+					<last-name>Hamilton</last-name>
+					<phone-main>(555) 654-3223</phone-main>
+					<address1>102 West Ave</address1>
+					<city>Newark</city>
+					<state>NJ</state>
+					<zip5>07105</zip5>
+					<active>Y</active>
+				</entity>
+			</entity-group>
+			<premise-group>
+				<premise>
+					<premise-id>PRJ-671393_CR</premise-id>
+					<building>
+						<building-id>ea2bffb3-a5e0-e511-80e2-00505686042f_CR</building-id>
+						<address1>105 Main St</address1>
+						<city>Forked River</city>
+						<state>NJ</state>
+						<zip5>08731</zip5>
+						<utility-account-group>
+							<utility-account>
+								<ua-id>1a00ac0f-a5e0-e511-80e2-00505686042f_CR</ua-id>
+								<account-number>432345221</account-number>
+								<ims-utility-company-name>JCP&amp;L</ims-utility-company-name>
+								<premise-owner-entity-id>C000442732_CR</premise-owner-entity-id>
+								<ims-service-type>E</ims-service-type>
+								<active>Y</active>
+							</utility-account>
+						</utility-account-group>
+					</building>
+					<ims-building-space-type>Residential - Single-Family</ims-building-space-type>
+				</premise>
+			</premise-group>
+			<milestone-group>
+				<milestone>
+					<milestone-id>RBT-671032_001_CR</milestone-id>
+					<ims-milestone-type-name>Received</ims-milestone-type-name>
+					<milestone-date-time>2015-03-02 16:44:00</milestone-date-time>
+				</milestone>
+			</milestone-group>
+			<measure-group>
+				<installed-group>
+					<measure-installed>
+						<line-item-id>MC-928711_CR</line-item-id>
+						<ims-measure-detailed-type-name>A/C - Central</ims-measure-detailed-type-name>
+						<measure-location-premise-id>PRJ-671392_CR</measure-location-premise-id>
+						<qty-committed>0</qty-committed>
+						<qty-installed>1</qty-installed>
+						<measure-installed-attribute-group>
+							<measure-installed-attribute>
+								<field>PURCHASE DATE</field>
+								<value>2/17/2016</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Condensing Unit SERIAL_NUMBER</field>
+								<value>CU Serial 1</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Indoor Coil SERIAL_NUMBER</field>
+								<value>IC Serial 1</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Air Handler SERIAL_NUMBER</field>
+								<value>AF Serial 1</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>BTUH</field>
+								<value>24000</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>ENERGY STAR</field>
+								<value>No</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>EER</field>
+								<value>13.00</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>SEER</field>
+								<value>16.00</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Condensing Unit MANUFACTURER</field>
+								<value>CU Man</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Condensing Unit MODEL</field>
+								<value>CU Mod1</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Indoor Coil MANUFACTURER</field>
+								<value>IC Man</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Indoor Coil MODEL</field>
+								<value>IC Mod 1</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Air Handler MANUFACTURER</field>
+								<value>AH Man</value>
+							</measure-installed-attribute>
+							<measure-installed-attribute>
+								<field>Air Handler MODEL</field>
+								<value>AH Mod 1</value>
+							</measure-installed-attribute>
+						</measure-installed-attribute-group>
+						<incentive-amount>300.00</incentive-amount>
+						<energy-savgen-meas-inst-deemed>
+							<sav-elec-ann-kwh>207.6923076923</sav-elec-ann-kwh>
+							<sav-peak-demand-kw>0.1944179714</sav-peak-demand-kw>
+							<sav-gas-ann-therm>0</sav-gas-ann-therm>
+						</energy-savgen-meas-inst-deemed>
+					</measure-installed>
+				</installed-group>
+			</measure-group>
+			<incentive-group>
+				<incentive>
+					<incentive-id>MC-928711_CR</incentive-id>
+					<ims-incentive-type-name>Appliance Rebate</ims-incentive-type-name>
+					<ims-funding-source_name>Residential HVAC - Electric &amp; Gas</ims-funding-source_name>
+				</incentive>
+				<incentive>
+					<incentive-id>MC-928713_CR</incentive-id>
+					<ims-incentive-type-name>Hurricane Sandy Bonus</ims-incentive-type-name>
+				</incentive>
+			</incentive-group>
+		</application>
+	</application-group>
+</ims_application_data_update>

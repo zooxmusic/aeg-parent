@@ -30,8 +30,7 @@ public class DynamicFtpChannelResolver {
     //the code from a junit
     public static final int MAX_CACHE_SIZE = 2;
 
-    private final LinkedHashMap<String, MessageChannel> channels =
-            new LinkedHashMap<String, MessageChannel>() {
+    private final LinkedHashMap<String, MessageChannel> channels =   new LinkedHashMap<String, MessageChannel>() {
 
                 private static final long serialVersionUID = 1L;
 
@@ -78,9 +77,7 @@ public class DynamicFtpChannelResolver {
     private synchronized MessageChannel createNewCustomerChannel(String customer) {
         MessageChannel channel = this.channels.get(customer);
         if (channel == null) {
-            ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext(
-                    new String[] { "/META-INF/spring/integration/dynamic-ftp-outbound-adapter-context.xml" },
-                    false);
+            ConfigurableApplicationContext ctx = new ClassPathXmlApplicationContext(new String[] { "/META-INF/spring/integration/Sftp-context.xml" }, false);
             this.setEnvironmentForCustomer(ctx, customer);
             ctx.refresh();
             channel = ctx.getBean("toFtpChannel", MessageChannel.class);

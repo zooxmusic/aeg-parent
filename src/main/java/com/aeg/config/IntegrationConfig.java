@@ -1,17 +1,26 @@
 package com.aeg.config;
 
 import com.jcraft.jsch.ChannelSftp;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.channel.DirectChannel;
+import org.springframework.integration.channel.QueueChannel;
 import org.springframework.integration.config.EnableIntegration;
 import org.springframework.integration.dsl.IntegrationFlow;
+import org.springframework.integration.dsl.IntegrationFlowDefinition;
 import org.springframework.integration.dsl.IntegrationFlows;
+import org.springframework.integration.dsl.channel.MessageChannels;
 import org.springframework.integration.dsl.sftp.Sftp;
+import org.springframework.integration.file.remote.gateway.AbstractRemoteFileOutboundGateway;
 import org.springframework.integration.file.remote.session.CachingSessionFactory;
 import org.springframework.integration.file.remote.session.SessionFactory;
+import org.springframework.integration.sftp.inbound.SftpInboundFileSynchronizingMessageSource;
 import org.springframework.integration.sftp.session.DefaultSftpSessionFactory;
 import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.PollableChannel;
+
+import java.io.File;
 
 
 @EnableIntegration
@@ -31,23 +40,23 @@ public class IntegrationConfig {
     @Bean
     public SessionFactory<ChannelSftp.LsEntry> sftpSessionFactory() {
         //Resource resource = new FileSystemResource(sftpProperties.privateKeyLocation);
-        return new CachingSessionFactory(defaultSftpSessionFactory());
+        return new CachingSessionFactory(crSftpServer());
     }
 
     @Bean
     public SessionFactory<ChannelSftp.LsEntry> ftpSessionFactory() {
         //Resource resource = new FileSystemResource(sftpProperties.privateKeyLocation);
-        return new CachingSessionFactory(defaultSftpSessionFactory());
+        return new CachingSessionFactory(crSftpServer());
     }
 
     @Bean
-    public SessionFactory<ChannelSftp.LsEntry> defaultSftpSessionFactory() {
+    public SessionFactory<ChannelSftp.LsEntry> crSftpServer() {
         //Resource resource = new FileSystemResource(sftpProperties.privateKeyLocation);
         DefaultSftpSessionFactory sftpSessionFactory = new DefaultSftpSessionFactory();
-        sftpSessionFactory.setHost("transfer.icfwebservices.com");
+        sftpSessionFactory.setHost("vault.clearesult.com");
         sftpSessionFactory.setPort(22);
-        sftpSessionFactory.setUser("NJCEP_test");
-        sftpSessionFactory.setPassword("5YF08pcm");
+        sftpSessionFactory.setUser("bszucs");
+        sftpSessionFactory.setPassword("Z00xMu$1c");
         //sftpSessionFactory.setPrivateKey(resource);
         return sftpSessionFactory;
     }
@@ -64,6 +73,44 @@ public class IntegrationConfig {
                         .remoteFileSeparator("\\")
                         .useTemporaryFileName(false)
                         .remoteDirectory("ToICF")).get();
+    }
+
+
+    @Bean
+    public IntegrationFlow controlBus() {
+        return IntegrationFlowDefinition::<Void>controlBus;
+    }
+
+    @Bean
+    public PollableChannel remoteFileOutputChannel() {
+        return new QueueChannel();
+    }
+    @Bean
+    public IntegrationFlow sftpInboundFlow() {
+        return IntegrationFlows
+                .from(s -> s.sftp(this.crSftpServer())
+                                .preserveTimestamp(true)
+                                .remoteDirectory("HVAC - Files For Testing")
+                                .regexFilter(".*\\.*$")
+                                .localDirectory(new File("classpath:local-dir")),
+                        e -> e.id("sftpInboundAdapter").autoStartup(false))
+                .channel(MessageChannels.queue("sftpInboundResultChannel"))
+                .get();
+    }
+
+
+    @Bean
+    public IntegrationFlow sftpMGetFlow() {
+        return IntegrationFlows.from("sftpMgetInputChannel")
+                .handleWithAdapter(h ->
+                        h.sftpGateway(this.crSftpServer(),
+                                AbstractRemoteFileOutboundGateway.Command.MGET,
+                                "payload")
+                                    .options(AbstractRemoteFileOutboundGateway.Option.RECURSIVE)
+                                    .regexFileNameFilter(".*")
+                                    .localDirectoryExpression("@sftpServer.targetLocalDirectoryName + #remoteDirectory"))
+                .channel(remoteFileOutputChannel())
+                .get();
     }
 
     /*@Bean
